@@ -7,6 +7,16 @@ theme = "PaperMod"
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowToc = false
+  ShowShareButtons = false
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+
+[params.homeInfoParams]
+  Title = "何以为本"
+  Content = "记录 AI、技术、项目、创业与生活观察。把真实问题写下来，把长期思考留下来。"
 
 [menu]
   [[menu.main]]
