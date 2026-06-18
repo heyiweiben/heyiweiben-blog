@@ -25,9 +25,10 @@
     <div class="home-taxonomy-group">
         <h3>分类</h3>
         <div class="home-taxonomy-links">
+            <button class="is-active" type="button" data-filter-category="">全部<span>{{ len (where site.RegularPages "Section" "posts") }}</span></button>
             {{- range $name, $taxonomy := $categories }}
             {{- with site.GetPage (printf "/categories/%s" $name) }}
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}<span>{{ len $taxonomy }}</span></a>
+            <button type="button" data-filter-category="{{ .LinkTitle }}">{{ .LinkTitle }}<span>{{ len $taxonomy }}</span></button>
             {{- end }}
             {{- end }}
         </div>
@@ -46,4 +47,40 @@
     </div>
     {{- end }}
 </section>
+<script>
+    (function () {
+        var buttons = document.querySelectorAll("[data-filter-category]");
+        var posts = document.querySelectorAll(".post-entry");
+        if (!buttons.length || !posts.length) return;
+
+        function filterByCategory(category) {
+            buttons.forEach(function (item) {
+                item.classList.toggle("is-active", item.getAttribute("data-filter-category") === category);
+            });
+
+            posts.forEach(function (post) {
+                var categories = Array.from(post.querySelectorAll(".meta-category")).map(function (item) {
+                    return item.textContent.trim();
+                });
+                var visible = !category || categories.indexOf(category) !== -1;
+                post.hidden = !visible;
+            });
+        }
+
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                filterByCategory(button.getAttribute("data-filter-category"));
+            });
+        });
+
+        posts.forEach(function (post) {
+            Array.from(post.querySelectorAll(".meta-category")).forEach(function (link) {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    filterByCategory(link.textContent.trim());
+                });
+            });
+        });
+    })();
+</script>
 {{- end }}

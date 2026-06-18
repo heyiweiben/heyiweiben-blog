@@ -128,7 +128,8 @@ body {
   gap: 10px;
 }
 
-.home-taxonomy-links a {
+.home-taxonomy-links a,
+.home-taxonomy-links button {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -138,11 +139,16 @@ body {
   border-radius: 999px;
   background: var(--entry);
   color: var(--primary);
+  appearance: none;
   font-size: 14px;
+  font: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.home-taxonomy-links a:hover {
+.home-taxonomy-links a:hover,
+.home-taxonomy-links button:hover,
+.home-taxonomy-links button.is-active {
   border-color: var(--brand);
   color: var(--brand);
   background: var(--brand-soft);
@@ -151,6 +157,10 @@ body {
 .home-taxonomy-links span {
   color: var(--secondary);
   font-size: 12px;
+}
+
+.post-entry[hidden] {
+  display: none;
 }
 
 .post-entry:hover {
