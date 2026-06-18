@@ -1,0 +1,49 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
+
+{{- $categories := site.Taxonomies.categories -}}
+{{- $series := site.Taxonomies.series -}}
+{{- if or $categories $series }}
+<section class="home-taxonomy" aria-label="内容索引">
+    <div class="home-taxonomy-header">
+        <h2>内容索引</h2>
+        <p>按主题进入长期文章，而不是只按时间翻找。</p>
+    </div>
+    {{- if $categories }}
+    <div class="home-taxonomy-group">
+        <h3>分类</h3>
+        <div class="home-taxonomy-links">
+            {{- range $name, $taxonomy := $categories }}
+            {{- with site.GetPage (printf "/categories/%s" $name) }}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}<span>{{ len $taxonomy }}</span></a>
+            {{- end }}
+            {{- end }}
+        </div>
+    </div>
+    {{- end }}
+    {{- if $series }}
+    <div class="home-taxonomy-group">
+        <h3>系列</h3>
+        <div class="home-taxonomy-links">
+            {{- range $name, $taxonomy := $series }}
+            {{- with site.GetPage (printf "/series/%s" $name) }}
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}<span>{{ len $taxonomy }}</span></a>
+            {{- end }}
+            {{- end }}
+        </div>
+    </div>
+    {{- end }}
+</section>
+{{- end }}

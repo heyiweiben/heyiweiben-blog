@@ -12,6 +12,7 @@ copyright = "© 何以为本"
 
 [taxonomies]
   category = "categories"
+  series = "series"
   tag = "tags"
 
 [params]

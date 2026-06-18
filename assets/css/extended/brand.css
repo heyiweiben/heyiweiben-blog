@@ -79,6 +79,80 @@ body {
   transition: border-color 0.18s ease, transform 0.18s ease;
 }
 
+.home-taxonomy {
+  margin: 0 0 18px;
+  padding: 0 2px 8px;
+}
+
+.home-taxonomy-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
+.home-taxonomy h2,
+.home-taxonomy h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.home-taxonomy h2 {
+  font-size: 22px;
+}
+
+.home-taxonomy h3 {
+  min-width: 42px;
+  color: var(--secondary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.home-taxonomy p {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 14px;
+}
+
+.home-taxonomy-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.home-taxonomy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.home-taxonomy-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--entry);
+  color: var(--primary);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.home-taxonomy-links a:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--brand-soft);
+}
+
+.home-taxonomy-links span {
+  color: var(--secondary);
+  font-size: 12px;
+}
+
 .post-entry:hover {
   border-color: var(--brand);
   transform: translateY(-2px);
@@ -159,5 +233,15 @@ body {
   .first-entry .entry-content {
     font-size: 15px;
     padding-left: 12px;
+  }
+
+  .home-taxonomy-header,
+  .home-taxonomy-group {
+    display: block;
+  }
+
+  .home-taxonomy p,
+  .home-taxonomy-links {
+    margin-top: 8px;
   }
 }
