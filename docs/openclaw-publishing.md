@@ -69,6 +69,8 @@ Rules:
 - Use a visible sequence marker in the title: `AI札记 001｜...`, `AI札记 002｜...`.
 - Preserve continuity with previous notes: each new note should inherit or respond to the previous note's key judgment, then advance one small step.
 - Use `series: "AI札记"` and `series_order: <number>` in front matter when generating AI notes.
+- After drafting, revise the note with the `humanizer-zh` standard: remove formulaic AI phrasing, generic slogans, rigid three-part structure, and templated endings such as `可复述的小判断：`.
+- Keep the final paragraph natural. A reusable takeaway is still required, but it should read like a sentence from the note, not a label.
 - Write 300-600 Chinese characters in the body.
 - Answer one clear question.
 - Keep the title concrete and easy to quote.
