@@ -65,6 +65,10 @@ Rules:
 - Generate at most one `AI札记` article for each date.
 - Use filename format `YYYY-MM-DD-ai-notes.md`.
 - Use `categories: ["AI札记"]`.
+- Treat `AI札记` as one continuous numbered column, not isolated daily notes.
+- Use a visible sequence marker in the title: `AI札记 001｜...`, `AI札记 002｜...`.
+- Preserve continuity with previous notes: each new note should inherit or respond to the previous note's key judgment, then advance one small step.
+- Use `series: "AI札记"` and `series_order: <number>` in front matter when generating AI notes.
 - Write 300-600 Chinese characters in the body.
 - Answer one clear question.
 - Keep the title concrete and easy to quote.
