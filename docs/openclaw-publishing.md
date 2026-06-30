@@ -159,6 +159,20 @@ Rules:
 - Do not chase unverified trending topics.
 - End with one reusable judgment or takeaway.
 
+### AI Notes Consistency Gate
+
+The successful 2026-06 rewrite is the baseline. Future AI notes must keep the same quality level as the pinned article `我为什么要把个人博客重新捡起来` and the humanized longform `AI札记 001-013` series.
+
+Before publishing an AI note, OpenClaw must run an actual second-pass humanizer edit, not merely mention the humanizer standard. This pass should remove:
+
+- formulaic connectors such as repeated `真正`、`这也是`、`所以`;
+- slogan-like endings and labeled takeaways;
+- rigid three-part structures and symmetrical paragraphs;
+- generic capability claims that are not backed by a concrete scene;
+- language that sounds like a prompt being obeyed rather than a person making a judgment.
+
+The final quality check is reader-facing, not prompt-facing: if the article only proves that a prompt was followed, it fails. It passes only when it reads like a restrained public article from someone who has handled real work, can define a problem clearly, and can leave a judgment worth rereading.
+
 ## Publishing Flow
 
 OpenClaw must follow this order:
