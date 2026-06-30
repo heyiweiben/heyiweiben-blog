@@ -93,9 +93,9 @@ def validate(posts_dir: Path) -> list[str]:
                     errors.append(f"{post.name}: AI札记 filename must be {expected_name}")
 
             body_length = countable_length(body)
-            if body_length < 300 or body_length > 600:
+            if body_length < 1200 or body_length > 2500:
                 errors.append(
-                    f"{post.name}: AI札记 body must be 300-600 countable characters, got {body_length}"
+                    f"{post.name}: AI札记 body must be 1200-2500 countable characters, got {body_length}"
                 )
 
     for date, names in daily_ai_by_date.items():
