@@ -70,6 +70,9 @@ def validate(posts_dir: Path) -> list[str]:
         summary = scalar(front_matter, "summary")
         post_categories = categories(front_matter)
 
+        if draft == "true" and len(post_categories) == 1 and post_categories[0] == "AI札记":
+            continue
+
         if not title:
             errors.append(f"{post.name}: missing title")
         if not summary:

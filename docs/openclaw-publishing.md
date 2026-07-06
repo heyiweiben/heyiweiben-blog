@@ -2,6 +2,15 @@
 
 This repository is the Hugo blog for https://heyiweiben.com/.
 
+## Current Publishing Boundary
+
+As of 2026-07-06, automated `AI札记` publishing is stopped.
+
+- Do not generate new `AI札记` posts.
+- Do not publish AI-generated articles to `何以为本` by default.
+- Existing AI-generated posts must remain hidden from Hugo output unless the user explicitly selects, rewrites, and approves a specific article for public display.
+- Public posts should be human-written or explicitly user-approved. AI may help edit a selected human article, but the final article must carry the user's real judgment, concrete scenes, and approval.
+
 Remote repository:
 
 ```text
@@ -139,6 +148,11 @@ Publishing principle:
 
 ## AI Notes Column
 
+The `AI札记` column is paused. OpenClaw must not generate or publish daily `AI札记` articles unless the user explicitly reopens this column.
+
+Historical rules below are retained only as an archive of the previous publishing protocol. They are not active operating instructions.
+
+<!--
 OpenClaw may generate one article per day for the category `AI札记`.
 
 Rules:
@@ -172,6 +186,7 @@ Before publishing an AI note, OpenClaw must run an actual second-pass humanizer 
 - language that sounds like a prompt being obeyed rather than a person making a judgment.
 
 The final quality check is reader-facing, not prompt-facing: if the article only proves that a prompt was followed, it fails. It passes only when it reads like a restrained public article from someone who has handled real work, can define a problem clearly, and can leave a judgment worth rereading.
+-->
 
 ## Publishing Flow
 
@@ -181,7 +196,7 @@ OpenClaw must follow this order:
 2. Run `git status --short` and stop if there are unrelated local changes.
 3. Run `git pull --ff-only origin main`.
 4. Read publishable human-written posts from the knowledge base.
-5. Generate today's `AI札记` post only if it does not already exist.
+5. Do not generate `AI札记` or other AI-produced posts.
 6. Copy or create Markdown files under `content/posts/`.
 7. Run `python3 tools/validate_blog_posts.py` on macOS/Linux, or `python tools/validate_blog_posts.py` if the environment exposes Python as `python`.
 8. Run `hugo --gc --minify`.
