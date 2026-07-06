@@ -17,3 +17,5 @@ draft: false
 - 生活札记：读书、城市、日常观察、短诗和个人感受。
 
 不追热点，不讨好算法，只做长期积累。
+
+联系方式：[heyiweiben@gmail.com](mailto:heyiweiben@gmail.com)
