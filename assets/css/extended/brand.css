@@ -240,6 +240,28 @@ body {
   margin-top: 14px;
 }
 
+.home-info .entry-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.home-info .social-icons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.home-contact-email {
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.home-contact-email:hover {
+  color: var(--brand);
+}
+
 .post-meta,
 .breadcrumbs {
   color: var(--secondary);

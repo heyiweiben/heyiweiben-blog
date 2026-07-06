@@ -11,6 +11,9 @@
     </div>
     <footer class="entry-footer">
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+        {{- with site.Params.contactEmail }}
+        <a class="home-contact-email" href="mailto:{{ . }}">{{ . }}</a>
+        {{- end }}
     </footer>
 </article>
 {{- end -}}
