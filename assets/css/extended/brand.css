@@ -12,7 +12,6 @@
   --brand-soft: #f2e2d8;
   --accent: #2f6f64;
   --accent-soft: #e4efeb;
-  --paper-line: rgba(139, 63, 47, 0.08);
 }
 
 .dark {
@@ -29,16 +28,16 @@
   --brand-soft: #33241f;
   --accent: #82b9ac;
   --accent-soft: #223630;
-  --paper-line: rgba(216, 135, 111, 0.08);
 }
 
 body {
   font-family: "LXGW WenKai Screen", "Noto Serif SC", "Source Han Serif SC", "Microsoft YaHei", sans-serif;
   letter-spacing: 0;
   background:
-    linear-gradient(180deg, rgba(47, 111, 100, 0.055), transparent 260px),
-    repeating-linear-gradient(0deg, transparent, transparent 31px, var(--paper-line) 32px),
+    radial-gradient(900px 360px at 8% -8%, color-mix(in srgb, var(--brand-soft) 32%, transparent), transparent 70%),
+    radial-gradient(760px 300px at 92% 0%, color-mix(in srgb, var(--accent-soft) 24%, transparent), transparent 72%),
     var(--theme);
+  background-attachment: fixed;
   text-rendering: optimizeLegibility;
 }
 
