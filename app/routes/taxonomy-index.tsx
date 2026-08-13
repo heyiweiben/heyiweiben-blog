@@ -16,7 +16,7 @@ export default function TaxonomyIndex() {
       </header>
       {terms.length ? (
         <ul className="term-index-list">
-          {terms.map((term) => <li key={term}><Link to={`/${root}/${encodeURIComponent(term)}`}>{term}</Link></li>)}
+          {terms.map((term) => <li key={term}><Link to={`/${root}/${encodeURIComponent(term)}/`}>{term}</Link></li>)}
         </ul>
       ) : <p className="empty-state">这里暂时没有公开内容。</p>}
     </main>

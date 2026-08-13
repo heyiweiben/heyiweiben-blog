@@ -112,10 +112,10 @@ function IndexPanel() {
         <button className="index-panel__scrim" type="button" aria-label="关闭索引" onClick={closePanel} />
         <nav className="index-panel__body" aria-label="站点索引">
           <p className="index-panel__caption">何以为本 · 索引</p>
-          <Link ref={firstLinkRef} to="/posts" className="index-panel__link">
+          <Link ref={firstLinkRef} to="/posts/" className="index-panel__link">
             <span>文章</span><span>全部写作</span>
           </Link>
-          <Link to="/about" className="index-panel__link">
+          <Link to="/about/" className="index-panel__link">
             <span>关于</span><span>为什么写</span>
           </Link>
           <a href="mailto:heyiweiben@gmail.com" className="index-panel__link">

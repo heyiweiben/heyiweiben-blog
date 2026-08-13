@@ -9,7 +9,7 @@ export function ArticleList({ posts, compact = false }: { posts: Post[]; compact
         <article className={index === 0 ? "article-row article-row--featured" : "article-row"} key={post.slug}>
           <p className="article-row__date">{formatDate(post.date)}</p>
           <div className="article-row__body">
-            <h2><Link to={`/posts/${post.slug}`}>{post.title}</Link></h2>
+            <h2><Link to={`/posts/${post.slug}/`}>{post.title}</Link></h2>
             {!compact && index === 0 && <p>{post.summary}</p>}
           </div>
         </article>

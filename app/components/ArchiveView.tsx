@@ -13,7 +13,7 @@ export function ArchiveView({ posts }: { posts: Post[] }) {
             {posts.filter((post) => post.date.startsWith(year)).map((post) => (
               <article className="archive-entry" key={post.slug}>
                 <time dateTime={post.date}>{formatDate(post.date).replace(`${year}年`, "")}</time>
-                <h3><Link to={`/posts/${post.slug}`}>{post.title}</Link></h3>
+                <h3><Link to={`/posts/${post.slug}/`}>{post.title}</Link></h3>
                 <p>{post.categories[0] ?? "随笔"}</p>
               </article>
             ))}

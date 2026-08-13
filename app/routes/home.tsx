@@ -25,7 +25,7 @@ export default function Home() {
           <h2 id="writing-title">精选</h2>
         </div>
         <ArticleList posts={posts} />
-        <Link className="text-link" to="/posts">查看全部文章<span aria-hidden="true" /></Link>
+        <Link className="text-link" to="/posts/">查看全部文章<span aria-hidden="true" /></Link>
       </section>
     </main>
   );

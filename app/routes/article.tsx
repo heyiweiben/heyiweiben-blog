@@ -23,7 +23,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
 export default function Article() {
   const post = findPost(useParams().slug ?? "");
   if (!post) {
-    return <main className="error-page"><h1>这篇文章没有公开。</h1><Link to="/posts">返回全部文章</Link></main>;
+    return <main className="error-page"><h1>这篇文章没有公开。</h1><Link to="/posts/">返回全部文章</Link></main>;
   }
   const headings = post.headings ?? [];
   return (
@@ -45,7 +45,7 @@ export default function Article() {
       </div>
       <nav className="article-close" aria-label="文章结束">
         <p>写于问题之下。</p>
-        <Link to="/posts">返回全部文章</Link>
+        <Link to="/posts/">返回全部文章</Link>
       </nav>
     </main>
   );

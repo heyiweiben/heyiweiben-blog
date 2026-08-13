@@ -37,6 +37,7 @@ for (const relative of primaryPages) {
 const files = await walk(out);
 const htmlFiles = files.filter((file) => file.endsWith(".html") && !file.endsWith("__spa-fallback.html"));
 const broken = [];
+const nonCanonical = [];
 for (const file of htmlFiles) {
   const html = await fs.readFile(file, "utf8");
   for (const match of html.matchAll(/href="([^"]+)"/g)) {
@@ -45,12 +46,16 @@ for (const file of htmlFiles) {
     const clean = href.split(/[?#]/)[0];
     if (!clean) continue;
     const relative = clean.replace(/^\//, "");
+    if (clean !== "/" && !path.extname(relative) && !clean.endsWith("/")) {
+      nonCanonical.push(`${path.relative(out, file)} -> ${href}`);
+    }
     const target = path.join(out, relative);
     const candidates = path.extname(relative) ? [target] : [target, path.join(target, "index.html")];
     if (!(await Promise.all(candidates.map(exists))).some(Boolean)) broken.push(`${path.relative(out, file)} -> ${href}`);
   }
 }
 if (broken.length) throw new Error(`broken internal links:\n${broken.join("\n")}`);
+if (nonCanonical.length) throw new Error(`internal page links must end with a slash:\n${nonCanonical.join("\n")}`);
 
 const publicText = (await Promise.all(files.filter((file) => /\.(html|js|xml)$/.test(file)).map((file) => fs.readFile(file, "utf8")))).join("\n");
 if (publicText.includes("2026-07-06-ai-notes") || publicText.includes("2026-06-18-ai-notes")) {

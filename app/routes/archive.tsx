@@ -20,9 +20,9 @@ export default function Archive() {
         <p>按时间，回到问题发生的地方。</p>
       </header>
       <nav className="term-filter" aria-label="按分类查看">
-        <Link to="/posts" aria-current="page">全部</Link>
+        <Link to="/posts/" aria-current="page">全部</Link>
         {categories.map((category) => (
-          <Link key={category} to={`/categories/${encodeURIComponent(category)}`}>{category}</Link>
+          <Link key={category} to={`/categories/${encodeURIComponent(category)}/`}>{category}</Link>
         ))}
       </nav>
       <ArchiveView posts={posts} />
