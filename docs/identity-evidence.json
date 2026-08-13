@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "reference_lock_version": "v1",
+  "source_strategy_locked": true,
+  "review_scope": "all_sections",
+  "viewports": {
+    "desktop": { "width": 1672, "height": 941 },
+    "ultrawide": { "width": 2200, "height": 1200 },
+    "mobile": { "width": 390, "height": 844 }
+  },
+  "fidelity_ledger": "docs/fidelity-ledger.md",
+  "fresh_review": "docs/fresh-review.md",
+  "fresh_review_mode": "fresh-thread",
+  "final_status": "pass",
+  "sections": [
+    {
+      "id": "hero",
+      "reference": { "path": "references/locked/v1/01-hero.png", "sha256": "25f76f3ad8d87d0faa0605c7427c15d39c2c93a61aae71e7290622defd7116fc" },
+      "render_contract": "docs/restoration-plan.md",
+      "topology": { "kind": "section-specific", "shared_with": [], "reason": "首页多层山体、标题排除区与视差坐标系独立" },
+      "captures": { "desktop": "qa/desktop/01-hero.png", "ultrawide": "qa/ultrawide/01-hero.png", "mobile": "qa/mobile/01-hero.png" },
+      "gates": { "visual_meaning": "pass", "hierarchy": "pass", "personal_evidence": "pass", "composition": "pass", "typography": "pass", "asset_crop": "pass", "overlap": "pass", "responsive": "pass", "reference_fidelity": "pass" },
+      "status": "pass"
+    },
+    {
+      "id": "home-writing",
+      "reference": { "path": "references/locked/v1/02-home-writing.png", "sha256": "b169af7f809d2c7ffd75421c6b67a77a7c00546a1289a6bd1d1b2a20fea62320" },
+      "render_contract": "docs/restoration-plan.md",
+      "topology": { "kind": "section-specific", "shared_with": [], "reason": "置顶文章与两篇次要文章使用独立编辑层级" },
+      "captures": { "desktop": "qa/desktop/02-home-writing.png", "ultrawide": "qa/ultrawide/02-home-writing.png", "mobile": "qa/mobile/02-home-writing.png" },
+      "gates": { "visual_meaning": "pass", "hierarchy": "pass", "personal_evidence": "pass", "composition": "pass", "typography": "pass", "asset_crop": "pass", "overlap": "pass", "responsive": "pass", "reference_fidelity": "pass" },
+      "status": "pass"
+    },
+    {
+      "id": "archive",
+      "reference": { "path": "references/locked/v1/03-archive.png", "sha256": "06e9537fee1f0270035e9cb4648a47aaea7f07c83299b7277c2062b02753abc1" },
+      "render_contract": "docs/restoration-plan.md",
+      "topology": { "kind": "section-specific", "shared_with": [], "reason": "年份、筛选和文章行构成独立时间索引" },
+      "captures": { "desktop": "qa/desktop/03-archive.png", "ultrawide": "qa/ultrawide/03-archive.png", "mobile": "qa/mobile/03-archive.png" },
+      "gates": { "visual_meaning": "pass", "hierarchy": "pass", "personal_evidence": "pass", "composition": "pass", "typography": "pass", "asset_crop": "pass", "overlap": "pass", "responsive": "pass", "reference_fidelity": "pass" },
+      "status": "pass"
+    },
+    {
+      "id": "article",
+      "reference": { "path": "references/locked/v1/04-article.png", "sha256": "66984fc7b2d45b5c85ea2a5bc1065fa8463c1925971f9deb4a663f39d9e08eeb" },
+      "render_contract": "docs/restoration-plan.md",
+      "topology": { "kind": "section-specific", "shared_with": [], "reason": "标题、导语和窄正文列使用独立阅读网格" },
+      "captures": { "desktop": "qa/desktop/04-article.png", "ultrawide": "qa/ultrawide/04-article.png", "mobile": "qa/mobile/04-article.png" },
+      "gates": { "visual_meaning": "pass", "hierarchy": "pass", "personal_evidence": "pass", "composition": "pass", "typography": "pass", "asset_crop": "pass", "overlap": "pass", "responsive": "pass", "reference_fidelity": "pass" },
+      "status": "pass"
+    },
+    {
+      "id": "about",
+      "reference": { "path": "references/locked/v1/05-about.png", "sha256": "46e046e9c79efa465970ce59b5fd029f6e760905ad90e7ab2758955f9ff3dc6a" },
+      "render_contract": "docs/restoration-plan.md",
+      "topology": { "kind": "section-specific", "shared_with": [], "reason": "雾谷闭合文字安全区与内容序列独立" },
+      "captures": { "desktop": "qa/desktop/05-about.png", "ultrawide": "qa/ultrawide/05-about.png", "mobile": "qa/mobile/05-about.png" },
+      "gates": { "visual_meaning": "pass", "hierarchy": "pass", "personal_evidence": "pass", "composition": "pass", "typography": "pass", "asset_crop": "pass", "overlap": "pass", "responsive": "pass", "reference_fidelity": "pass" },
+      "status": "pass"
+    }
+  ]
+}

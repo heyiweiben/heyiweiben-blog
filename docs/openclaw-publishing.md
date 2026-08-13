@@ -1,6 +1,6 @@
 # OpenClaw Daily Publishing Protocol
 
-This repository is the Hugo blog for https://heyiweiben.com/.
+This repository is the React Router and Vite static site for https://heyiweiben.com/.
 
 ## Current Publishing Boundary
 
@@ -8,7 +8,7 @@ As of 2026-07-06, automated `AI札记` publishing is stopped.
 
 - Do not generate new `AI札记` posts.
 - Do not publish AI-generated articles to `何以为本` by default.
-- Existing AI-generated posts must remain hidden from Hugo output unless the user explicitly selects, rewrites, and approves a specific article for public display.
+- Existing AI-generated posts must remain hidden from the public build unless the user explicitly selects, rewrites, and approves a specific article for public display.
 - Public posts should be human-written or explicitly user-approved. AI may help edit a selected human article, but the final article must carry the user's real judgment, concrete scenes, and approval.
 
 Remote repository:
@@ -42,7 +42,7 @@ blog_url: https://heyiweiben.com/posts/<slug>/
 
 ## Blog Output Format
 
-All published blog posts in this Hugo repository must use this front matter:
+All published blog posts in this repository must use this front matter:
 
 ```yaml
 ---
@@ -115,7 +115,7 @@ Optimization workflow for each requested article:
    - The author values real workflows, project reviews, problem diagnosis, business judgment, and long-term accumulation.
    - The blog should become a long-term knowledge asset that does not depend on platform algorithms.
    - The reader should feel the author is handling complex problems in the real world, not merely writing opinions.
-7. Add SEO and publishing advice after the working draft when the output is for review, not when writing the final Hugo body:
+7. Add SEO and publishing advice after the working draft when the output is for review, not when writing the final website body:
    - recommended title;
    - English hyphen URL slug;
    - summary within 100 Chinese characters;
@@ -199,7 +199,7 @@ OpenClaw must follow this order:
 5. Do not generate `AI札记` or other AI-produced posts.
 6. Copy or create Markdown files under `content/posts/`.
 7. Run `python3 tools/validate_blog_posts.py` on macOS/Linux, or `python tools/validate_blog_posts.py` if the environment exposes Python as `python`.
-8. Run `hugo --gc --minify`.
+8. Run `pnpm test`, `pnpm typecheck`, and `pnpm build`.
 9. If validation or build fails, stop without commit or push.
 10. Commit only the new/updated blog files.
 11. Push to `origin main`.
@@ -223,4 +223,4 @@ Publish blog posts: YYYY-MM-DD
 - Do not publish files without `status: ready`.
 - Do not publish `status: published` files again.
 - Do not create more than one daily AI article for the same date.
-- Do not push when Hugo build fails.
+- Do not push when content tests, type checking, or the static build fails.

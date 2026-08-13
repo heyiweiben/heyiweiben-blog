@@ -1,4 +1,7 @@
-/public/
-/resources/_gen/
-.wrangler/
 node_modules/
+build/
+.react-router/
+.wrangler/
+app/generated/
+static/images/landscape/web/
+_tmp_*

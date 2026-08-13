@@ -1,0 +1,21 @@
+{
+  "name": "何以为本",
+  "short_name": "何以为本",
+  "description": "在技术、商业与生活之间。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3F0E8",
+  "theme_color": "#F3F0E8",
+  "icons": [
+    {
+      "src": "/images/brand/heyiweiben-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/brand/heyiweiben-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
