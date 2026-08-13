@@ -28,5 +28,8 @@ for (const term of new Set(manifest.posts.flatMap((post) => post.series))) {
 
 export default {
   ssr: true,
+  // Cloudflare serves only the prerendered files, so there is no runtime
+  // /__manifest endpoint. Embed the complete route manifest in every page.
+  routeDiscovery: { mode: "initial" },
   prerender: [...paths],
 } satisfies Config;
