@@ -10,7 +10,9 @@ function kindFromPath(pathname: string): "categories" | "tags" | "series" {
 }
 
 export const meta: Route.MetaFunction = ({ params }) => {
-  const term = decodeURIComponent(params.term ?? "");
+  // React Router 在路由匹配时已对 params 解码，这里直接使用，不再二次 decode
+  // （二次解码遇到含字面 % 的 term 会抛 URIError 导致页面 500）。
+  const term = params.term ?? "";
   return [
     { title: term ? `${term}｜何以为本` : "索引｜何以为本" },
     { name: "description", content: term ? `何以为本中与“${term}”有关的公开文章。` : "何以为本内容索引。" },
@@ -19,7 +21,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
 
 export default function Taxonomy() {
   const kind = kindFromPath(useLocation().pathname);
-  const term = decodeURIComponent(useParams().term ?? "");
+  const term = useParams().term ?? "";
   const posts = chronologicalPosts().filter((post) => post[kind].includes(term));
   const terms = uniqueTerms(kind);
   if (!posts.length) {

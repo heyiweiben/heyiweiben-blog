@@ -97,6 +97,10 @@ async function readPost(file) {
   const fallbackSlug = path.basename(file, path.extname(file));
   const rendered = await render(parsed.content);
   const html = rendered.html;
+  // 把第一段提升为导语：从正文剥离第一个 <p> 块。若文章只有一个段落
+  // （例如短诗），剥离后正文会变空，此时回退为完整 HTML，避免正文区空白。
+  const stripped = html.replace(/^<p>[\s\S]*?<\/p>\s*/, "");
+  const bodyHtml = stripped.trim() ? stripped : html;
   return {
     title: String(parsed.data.title ?? fallbackSlug),
     date: dateOnly(parsed.data.date),
@@ -109,7 +113,7 @@ async function readPost(file) {
     tags: list(parsed.data.tags),
     series: list(parsed.data.series),
     html,
-    bodyHtml: html.replace(/^<p>[\s\S]*?<\/p>\s*/, ""),
+    bodyHtml,
     headings: rendered.headings,
     plainText,
     lead: plain(leadBlock ?? parsed.data.summary ?? ""),

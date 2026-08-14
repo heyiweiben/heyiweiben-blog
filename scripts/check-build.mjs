@@ -1,8 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import matter from "gray-matter";
 
 const out = path.resolve("build/client");
 const manifest = JSON.parse(await fs.readFile("app/generated/content.json", "utf8"));
+const postsDir = path.resolve("content/posts");
 
 async function exists(target) {
   return fs.access(target).then(() => true).catch(() => false);
@@ -58,8 +60,19 @@ if (broken.length) throw new Error(`broken internal links:\n${broken.join("\n")}
 if (nonCanonical.length) throw new Error(`internal page links must end with a slash:\n${nonCanonical.join("\n")}`);
 
 const publicText = (await Promise.all(files.filter((file) => /\.(html|js|xml)$/.test(file)).map((file) => fs.readFile(file, "utf8")))).join("\n");
-if (publicText.includes("2026-07-06-ai-notes") || publicText.includes("2026-06-18-ai-notes")) {
-  throw new Error("draft route leaked into public build");
+// 动态收集所有草稿的 slug，任何草稿出现在公开产物中都判定为泄露，
+// 避免硬编码单个草稿文件名导致新增草稿绕过检查。
+const draftSlugs = [];
+for (const file of (await fs.readdir(postsDir)).filter((name) => name.endsWith(".md") && name !== "_index.md")) {
+  const source = await fs.readFile(path.join(postsDir, file), "utf8");
+  const parsed = matter(source);
+  if (parsed.data.draft === true) {
+    draftSlugs.push(String(parsed.data.slug ?? path.basename(file, path.extname(file))));
+  }
+}
+const leaked = draftSlugs.filter((slug) => publicText.includes(`/posts/${slug}`));
+if (leaked.length) {
+  throw new Error(`draft route leaked into public build: ${leaked.join(", ")}`);
 }
 
 console.log(`build check: ${manifest.posts.length} posts, ${htmlFiles.length} HTML files, internal links valid, drafts absent`);
