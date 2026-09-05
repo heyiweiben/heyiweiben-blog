@@ -2,6 +2,8 @@
 
 `heyiweiben.com` 的静态网站仓库。页面由 TypeScript、React Router Framework Mode 与 Vite 构建，文章继续使用 `content/` 中的 Markdown；`draft: true` 不会进入公开网站。
 
+Agent 开始工作前先阅读仓库根目录的 `AGENTS.md`。项目协作不依赖 OpenClaw、Hermes 或 Codex 各自工作区中的旧网站副本和旧发布 Skill。
+
 ## 本地使用
 
 需要 Node.js 20.9 或更高版本，并使用 `package.json` 中 `packageManager` 指定的 pnpm 11 版本。

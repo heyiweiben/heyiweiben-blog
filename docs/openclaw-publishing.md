@@ -1,5 +1,7 @@
 # OpenClaw Daily Publishing Protocol
 
+> Deprecated 2026-09-05: OpenClaw no longer maintains this project. This file is retained only as historical context and must not be executed. Current instructions are in the repository root `AGENTS.md`, `README.md`, and `PRODUCT.md`.
+
 This repository is the React Router and Vite static site for https://heyiweiben.com/.
 
 ## Current Publishing Boundary
