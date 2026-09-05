@@ -4,10 +4,10 @@
 
 ## 本地使用
 
-需要 Node.js 20 或更高版本，并启用 pnpm。
+需要 Node.js 20.9 或更高版本，并使用 `package.json` 中 `packageManager` 指定的 pnpm 11 版本。
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
@@ -25,12 +25,12 @@ Cloudflare 静态输出目录是 `build/client`。构建同时生成首页、文
 
 ## Windows Codex 与 Mac 观澜
 
-1. 开始网站工作前运行 `git status`，并从远端拉取最新提交。
+1. Windows 与 Mac 分别在 Agent 工作区、Obsidian Vault 和 Syncthing 范围之外维护独立 clone。Windows 当前路径为 `D:\hehaoguo\repos\heyiweiben-blog`；Mac 当前路径为 `/Users/hehaoguo/repos/heyiweiben-blog`。
 2. Windows Codex 主要负责网站架构、视觉重构、前端实现、响应式适配和本地质量验收。
-3. Mac 观澜负责文章写作与发布：维护项目根目录 `post/` 母稿，生成 `content/posts/` 网站发布版，并准备微信公众号版本。
-4. 观澜发布前运行 `pnpm install --frozen-lockfile`、`pnpm test`、`pnpm typecheck`、`pnpm build`，按授权提交并推送 GitHub，再检查 Cloudflare 和线上 URL。
+3. 何以为本负责文章正文、标题、摘要和最终公开表达。Mac Hermes/观澜默认只负责母稿整理与审稿、生成 `content/posts/` 网站发布版、准备微信公众号版本和执行已获授权的发布；具体文字编辑必须另行明确授权。
+4. 观澜发布前运行 `pnpm install --frozen-lockfile`、`pnpm test`、`pnpm typecheck`、`pnpm build` 和 `pnpm check`，按授权提交并推送 GitHub，再检查 Cloudflare 和线上 URL；成功后立即回写母稿的 `published` 状态、发布日期和正式 URL。
 5. Cloudflare 只托管 `build/client`；不需要 Hugo，也不要恢复 PaperMod 子模块。
-6. Codex 完成网站修改后通过 Syncthing 交接，观澜负责复核和正式发布；两端不得同时执行 Git 写操作。
+6. GitHub 是网站代码同步与发布历史的唯一通道。网站代码不得通过 Syncthing、Vault、Agent 工作区、共享工作树或 patch 交接；未获提交或推送授权时，改动只保留在发起设备并报告状态。
 7. 未经何以为本明确授权，任何 Agent 都不推送、不部署、不操作公众号、不创建定时任务。
 
 ## 视觉依据

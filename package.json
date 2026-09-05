@@ -2,6 +2,11 @@
   "name": "heyiweiben",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": ">=11.19.0 <12"
+  },
   "scripts": {
     "content": "node scripts/generate-content.mjs && node scripts/prepare-assets.mjs",
     "dev": "npm run content && react-router dev --host 127.0.0.1 --port 1313",
@@ -35,10 +40,5 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.6",
     "vite-tsconfig-paths": "^5.1.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "nanoid": "^3.3.18"
-    }
   }
 }

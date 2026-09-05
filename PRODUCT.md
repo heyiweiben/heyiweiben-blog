@@ -13,7 +13,7 @@ web
 ## Users
 
 - 主要读者是通过 `heyiweiben.com` 阅读何以为本个人文章的人。
-- 作者在 Windows 的 `post/` 完成母稿，在明确授权发布后同步网站发布版；Mac 观澜负责部署、线上维护和未来可能的定时任务。
+- 作者在 `post/` 完成正文、标题、摘要和最终公开表达；明确授权发布后，Mac Hermes/观澜负责网站发布版转换、部署和线上维护。当前没有默认定时任务。
 
 ## Product Purpose
 
@@ -26,9 +26,11 @@ web
 ## Operating Context
 
 - `post/` 是文章母稿真源，`content/posts/` 是网站发布副本。
-- Windows Codex 负责写作、编辑、发布版转换与发布前检查。
-- Mac 观澜通过同一 GitHub 仓库负责部署和网站维护。
-- GitHub 是双端交接通道；Syncthing 只同步项目工作文件，不替代 Git 历史。
+- Windows Codex 主要负责网站架构、视觉、前端实现、响应式适配和本地质量验收，不默认承担文章写作或发布版转换。
+- Mac Hermes/观澜负责母稿整理与审稿、发布版转换、发布前检查，以及获授权后的 Git 推送、部署和线上回读；默认不生成或改写作者的公开表达。
+- Windows 与 Mac 分别在 Agent 工作区、Vault 和 Syncthing 范围之外维护独立网站 clone；GitHub 远端是网站已发布代码和正式部署的历史基线。
+- Syncthing 只同步母稿、项目规则和状态记录，不同步网站工作树、`.git` 或代码 patch。
+- 两端开始工作前必须 fetch 并确认本机 Git 工作树和远端基线；网站代码只通过 Git 提交、分支和 GitHub 同步。
 
 ## Capabilities and Constraints
 
