@@ -1,4 +1,4 @@
-import "./styles/global.css";
+import cssText from "./styles/global.css?inline";
 
 import { useEffect, useRef, useState } from "react";
 import {
@@ -30,6 +30,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#F3F0E8" />
+        <style dangerouslySetInnerHTML={{ __html: cssText }} />
         <Meta />
         <Links />
       </head>

@@ -38,31 +38,6 @@ for (const file of (await walk(out)).filter((file) => file.endsWith(".html"))) {
 const notFoundSource = path.join(out, "404", "index.html");
 await fs.copyFile(notFoundSource, path.join(out, "404.html"));
 
-// 把外链 CSS 内联进 HTML。
-// 理由：CSS 是唯一的渲染阻塞资源，从国内访问 Cloudflare 边缘 RTT 常在 150—400ms，
-// 一次额外的阻塞往返就直接推迟首屏。CSS 压缩后只有 ~22KB（br 后 ~6KB），内联更划算。
-const cssCache = new Map();
-for (const file of (await walk(out)).filter((file) => file.endsWith(".html"))) {
-  const html = await fs.readFile(file, "utf8");
-  const hrefs = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"[^>]*>/g)].map((m) => m[1]);
-  if (!hrefs.length) continue;
-  let next = html;
-  for (const href of hrefs) {
-    if (!href.startsWith("/assets/")) continue;
-    if (!cssCache.has(href)) {
-      const cssPath = path.join(out, href.replace(/^\//, ""));
-      cssCache.set(href, await fs.readFile(cssPath, "utf8"));
-    }
-    const css = cssCache.get(href);
-    next = next.replace(
-      new RegExp(`<link[^>]+rel="stylesheet"[^>]+href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>`),
-      `<style>${css}</style>`,
-    );
-  }
-  if (next !== html) await fs.writeFile(file, next, "utf8");
-}
-
-
 for (const post of manifest.posts) {
   for (const alias of post.aliases) {
     const targetDir = path.join(out, alias.replace(/^\/+|\/+$/g, ""));
