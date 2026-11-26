@@ -444,6 +444,13 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 760px) {
   :root { --page-gutter: 1.35rem; }
+  body::before { background-image: url("/images/landscape/web/paper-grain-840.webp"); background-size: 720px auto; }
+  .hero__sky { background-image: url("/images/landscape/web/hero-sky-840.webp"); }
+  .hero__static { background-image: url("/images/landscape/web/hero-static-840.webp"); }
+  .home-writing__haze { background-image: linear-gradient(to bottom, var(--paper) 0%, transparent 18%, transparent 82%, var(--paper) 100%), url("/images/landscape/web/writing-haze-840.webp"); }
+  .archive-page__haze { background-image: linear-gradient(to left, transparent 48%, rgb(243 240 232 / .34) 74%, var(--paper) 100%), url("/images/landscape/web/archive-haze-840.webp"); }
+  .article-hero__haze { background-image: url("/images/landscape/web/article-heading-haze-840.webp"); }
+  .about-page__landscape { background-image: linear-gradient(to bottom, transparent 70%, var(--paper) 100%), url("/images/landscape/web/about-valley-840.webp"); }
   .site-header { height: 5.25rem; }
   .wordmark { letter-spacing: .04em; }
   .index-panel__body { width: 100%; padding-top: 7rem; }
