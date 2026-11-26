@@ -373,7 +373,9 @@ img { display: block; max-width: 100%; }
 .prose pre { overflow-x: auto; padding: 1.25rem 1.4rem; background: var(--ink); color: var(--paper); font-family: ui-monospace, monospace; font-size: .86rem; line-height: 1.65; }
 .prose code { font-family: ui-monospace, monospace; font-size: .88em; }
 .prose :not(pre) > code { padding: .12em .32em; background: color-mix(in srgb, var(--green) 14%, transparent); }
-.prose img { width: 100%; height: auto; margin: 3rem 0; }
+.prose picture { display: block; margin: 3rem 0; }
+.prose picture img { margin: 0; }
+.prose img { width: 100%; height: auto; margin: 3rem 0; background: var(--paper-deep); }
 .prose ul, .prose ol { padding-left: 1.4em; }
 .prose hr { width: 5rem; margin: 4rem auto; border: 0; border-top: 1px solid var(--coral); }
 .article-close { width: min(44rem, calc(100% - 3rem)); margin: 6rem auto 0; padding-top: 2rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 2rem; color: var(--ink-soft); font-family: var(--serif); }

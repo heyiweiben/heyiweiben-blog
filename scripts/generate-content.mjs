@@ -42,11 +42,73 @@ function collectHeadings() {
   };
 }
 
+let imageManifest = {};
+try {
+  imageManifest = JSON.parse(await fs.readFile(path.join(root, "app", "generated", "images.json"), "utf8"));
+} catch {
+  imageManifest = {};
+}
+
+const IMAGE_SIZES = "(min-width:720px) 704px, 100vw";
+
+function srcSet(list) {
+  return list.map((item) => `${item.url} ${item.width}w`).join(", ");
+}
+
+// 把正文里的 <img> 换成 AVIF/WebP 双源 + 两档宽度的 <picture>，并补上尺寸与懒加载。
+// 清单来自 scripts/prepare-post-images.mjs；没有清单条目时原样保留，不会破坏构建。
+function rehypeResponsiveImages() {
+  return (tree) => {
+    const walk = (node) => {
+      if (!Array.isArray(node.children)) return;
+      node.children = node.children.map((child) => {
+        walk(child);
+        if (child.type !== "element" || child.tagName !== "img") return child;
+        const src = child.properties?.src;
+        const entry = typeof src === "string" ? imageManifest[src] : null;
+        if (!entry?.variants?.avif?.length || !entry.variants.webp?.length) return child;
+        const alt = child.properties?.alt ?? "";
+        const fallback = entry.variants.webp.at(-1);
+        return {
+          type: "element",
+          tagName: "picture",
+          properties: {},
+          children: [
+            {
+              type: "element",
+              tagName: "source",
+              properties: { type: "image/avif", srcSet: srcSet(entry.variants.avif), sizes: IMAGE_SIZES },
+              children: [],
+            },
+            {
+              type: "element",
+              tagName: "img",
+              properties: {
+                src: fallback.url,
+                srcSet: srcSet(entry.variants.webp),
+                sizes: IMAGE_SIZES,
+                width: entry.width,
+                height: entry.height,
+                alt,
+                loading: "lazy",
+                decoding: "async",
+              },
+              children: [],
+            },
+          ],
+        };
+      });
+    };
+    walk(tree);
+  };
+}
+
 const processor = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkRehype)
   .use(rehypeSlug)
+  .use(rehypeResponsiveImages)
   .use(collectHeadings)
   .use(rehypeStringify);
 

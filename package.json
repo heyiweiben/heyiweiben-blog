@@ -8,7 +8,7 @@
     "pnpm": ">=11.19.0 <12"
   },
   "scripts": {
-    "content": "node scripts/generate-content.mjs && node scripts/prepare-assets.mjs",
+    "content": "node scripts/prepare-post-images.mjs && node scripts/generate-content.mjs && node scripts/prepare-assets.mjs",
     "dev": "npm run content && react-router dev --host 127.0.0.1 --port 1313",
     "build": "node scripts/clean-build.mjs && npm run content && react-router build && node scripts/postbuild.mjs",
     "check": "node scripts/check-build.mjs",
