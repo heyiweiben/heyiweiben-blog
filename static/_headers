@@ -1,15 +1,32 @@
-# Cloudflare Workers static assets：HTML 短缓存 + 静态资源长缓存
-# 顺序有意义：后面的规则覆盖前面的同名头。
-# HTML（含手写页）：5 分钟内复用，过期后后台重验，避免每次打开都回源。
-/*
+# Cloudflare Workers static assets 缓存策略
+# 注意：_headers 的规则是「叠加」而不是覆盖——同一路径命中多条规则时，
+# 同一个头会被拼成两个值（出现重复 max-age）。所以按路径分开写，不用 /* 兜底。
+# 另：/images 下的文件名一旦发布不要原地换内容，改图请换新文件名（-v2），
+# 否则回访用户会在缓存期内看到旧图。
+
+# —— HTML：5 分钟内复用，过期后后台重验，避免每次打开都回源 ——
+/
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
-# 注意：/images 下的文件名一旦发布就不要原地替换内容——改图请换新文件名（如 -v2），
-# 否则回访用户会在缓存期内继续看到旧图。
+/posts/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/about/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 /journeys/*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
+/categories/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/tags/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/series/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+# —— 静态资源：一年不改，永久缓存 ——
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
