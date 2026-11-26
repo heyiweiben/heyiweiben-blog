@@ -115,6 +115,9 @@ function IndexPanel() {
           <Link ref={firstLinkRef} to="/posts/" className="index-panel__link">
             <span>文章</span><span>全部写作</span>
           </Link>
+          <a href="/journeys/xibei-73-days/" className="index-panel__link">
+            <span>旅程</span><span>西北行 · 73天</span>
+          </a>
           <Link to="/about/" className="index-panel__link">
             <span>关于</span><span>为什么写</span>
           </Link>
@@ -140,6 +143,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <p>何以为本 Lab</p>
+      <p><a href="/journeys/xibei-73-days/">向西北去，万里共秋光 · 73天路书</a></p>
       <a href="mailto:heyiweiben@gmail.com">heyiweiben@gmail.com</a>
       <p>© {new Date().getFullYear()} 何以为本</p>
     </footer>

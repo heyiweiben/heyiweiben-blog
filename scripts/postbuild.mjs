@@ -68,6 +68,7 @@ for (const [kind, field] of [["categories", "categories"], ["tags", "tags"], ["s
 
 const urls = [
   "", "posts/", "about/", "categories/", "tags/", "series/",
+  "journeys/xibei-73-days/",
   ...sorted.map((post) => `posts/${post.slug}/`),
   ...[...new Set(sorted.flatMap((post) => post.categories))].map((term) => `categories/${encodeURIComponent(term)}/`),
   ...[...new Set(sorted.flatMap((post) => post.tags))].map((term) => `tags/${encodeURIComponent(term)}/`),
