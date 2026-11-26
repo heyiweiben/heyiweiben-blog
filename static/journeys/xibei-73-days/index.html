@@ -12,6 +12,7 @@ a{color:inherit}.page{width:min(100%,760px);margin:auto;background:var(--paper);
 .hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-56px;height:145px;background:var(--paper);border-radius:50% 50% 0 0/34% 34% 0 0}.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#ead8b7}.hero-main{position:relative;z-index:1}.hero h1{font-family:Georgia,"Songti SC",serif;font-size:clamp(44px,13vw,82px);line-height:1.03;letter-spacing:-.045em;margin:0 0 24px}.hero h1 em{display:block;color:#e1b773;font-style:normal}.hero .lead{max-width:560px;font-size:17px;color:rgba(255,255,255,.8);margin:0}.hero-meta{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1;margin-bottom:36px}.pill{flex:0 0 auto;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 12px;font-size:12px;backdrop-filter:blur(8px)}
 main{padding:60px 20px 40px}.intro{font-family:Georgia,"Songti SC",serif;font-size:22px;line-height:1.75;margin:0 4px 42px}.intro .drop{float:left;font-size:70px;line-height:.8;color:var(--rust);padding:10px 8px 0 0}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:72px}.stat{border-top:1px solid var(--ink);padding:15px 2px 10px}.stat b{font-family:Georgia,serif;font-size:30px;font-weight:500;display:block}.stat span{font-size:12px;color:var(--muted)}
 .kicker{font-size:11px;letter-spacing:.22em;color:var(--rust);font-weight:700;text-transform:uppercase}.section-title{font-family:Georgia,"Songti SC",serif;font-size:34px;line-height:1.25;margin:8px 0 14px}.section-note{color:var(--muted);margin:0 0 32px}.chapter{padding:34px 0;border-top:1px solid var(--line)}.chapter-head{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:start}.num{font-family:Georgia,serif;font-size:42px;line-height:1;color:var(--sand)}.chapter h3{font-family:Georgia,"Songti SC",serif;font-size:26px;line-height:1.3;margin:0}.date{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-top:5px}.route{margin:22px 0 18px;padding-left:16px;border-left:2px solid var(--sand);font-size:14px;color:#414744}.story{font-size:16px;margin:0 0 18px}.moment{font-family:Georgia,"Songti SC",serif;font-size:20px;line-height:1.6;color:var(--rust);margin:20px 0}.map-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:700;border-bottom:1px solid var(--ink);padding-bottom:3px}.map-link:after{content:"↗"}.map-link:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(--sand);outline-offset:4px}
+.journey-map{margin:0 0 72px;padding:22px 14px 16px;background:#182725;color:#f7f1e6}.map-head{display:flex;justify-content:space-between;gap:12px;align-items:end;padding:4px 6px 16px}.map-head h2{font-family:Georgia,"Songti SC",serif;font-size:27px;line-height:1.25;margin:0}.map-badge{font-size:11px;color:#e1b773;white-space:nowrap}.journey-map svg{display:block;width:100%;height:auto;background:radial-gradient(circle at 50% 42%,#29433f,#182725 68%)}.map-grid{stroke:rgba(255,255,255,.07);stroke-width:1}.map-line{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.map-dot{fill:#f7f1e6;stroke:#182725;stroke-width:2}.map-label{fill:#f7f1e6;font-size:15px;font-weight:700;paint-order:stroke;stroke:#182725;stroke-width:5px;stroke-linejoin:round}.map-small{fill:#c8d2cf;font-size:11px}.map-legend{display:grid;grid-template-columns:repeat(2,1fr);gap:7px 12px;padding:16px 6px 8px;font-size:11px;color:#c8d2cf}.map-legend span:before{content:"";display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:middle;background:var(--c)}.map-note{font-size:11px;color:#9fb0ac;padding:8px 6px 0;border-top:1px solid rgba(255,255,255,.12)}
 .interlude{margin:40px -20px;padding:54px 24px;color:white;background:linear-gradient(140deg,#6d452e,#b56e42)}.interlude p{font-family:Georgia,"Songti SC",serif;font-size:27px;line-height:1.55;margin:0}.interlude small{display:block;margin-top:18px;color:rgba(255,255,255,.75)}
 .ledger{margin:54px 0;background:#e9dfce;padding:25px 20px}.ledger-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.money b{display:block;font-family:Georgia,serif;font-size:25px;font-weight:500}.money span{font-size:12px;color:var(--muted)}.ledger-note{font-size:13px;color:var(--muted);border-top:1px solid rgba(23,32,31,.16);padding-top:16px;margin-top:20px}
 details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:0;margin:54px 0}summary{list-style:none;cursor:pointer;padding:20px 2px;font-weight:700;display:flex;justify-content:space-between}summary::-webkit-details-marker{display:none}summary:after{content:"＋";font-size:22px;font-weight:400}details[open] summary:after{content:"－"}.full-route{padding:0 2px 24px}.route-row{display:grid;grid-template-columns:86px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.route-row time{font-size:12px;color:var(--muted)}.route-row p{font-size:14px;margin:0}.route-row a{text-decoration:none;border-bottom:1px dotted currentColor}
@@ -42,6 +43,41 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
     <div class="stat"><b>1</b><span>辆纯电车</span></div>
   </section>
 
+  <section class="journey-map" aria-labelledby="journey-map-title">
+    <div class="map-head"><h2 id="journey-map-title">73天全程路书</h2><div class="map-badge">高德校准 · 38个节点</div></div>
+    <svg viewBox="0 0 720 620" role="img" aria-label="重庆出发，经河西走廊、新疆、宁夏、内蒙古、陕北和秦岭返回重庆的全程路线图">
+      <g class="map-grid"><path d="M0 120H720M0 240H720M0 360H720M0 480H720M120 0V620M240 0V620M360 0V620M480 0V620M600 0V620"/></g>
+      <g opacity=".2" fill="none" stroke="#b9c6c2" stroke-width="1.2"><path d="M640 572C585 555 555 505 566 460C575 423 650 410 672 365C696 314 642 260 614 212C577 148 534 102 463 70C395 39 313 33 239 64C164 95 91 149 60 221C25 303 62 381 117 435C171 487 230 515 306 531C385 548 473 541 542 569Z"/></g>
+      <polyline class="map-line" stroke="#c89042" points="651,578 618,467 596,390 528,307 382,190 379,171 271,165"/>
+      <polyline class="map-line" stroke="#6f9e91" points="271,165 315,67 268,27 262,29 233,99 217,150"/>
+      <polyline class="map-line" stroke="#df8c62" points="217,150 198,179 202,188 179,226"/>
+      <polyline class="map-line" stroke="#8ba7be" points="179,226 39,291 24,340 64,322 118,359 174,360 230,278 373,225 434,190"/>
+      <polyline class="map-line" stroke="#b78a60" points="434,190 455,192 544,272 617,283 643,310 669,348"/>
+      <polyline class="map-line" stroke="#a57aaa" points="669,348 690,319 687,256 684,286 678,372 674,403 667,433 657,471 639,488 626,519 600,527 651,578"/>
+      <g>
+        <circle class="map-dot" cx="651" cy="578" r="7"/><text class="map-label" x="610" y="606">重庆</text>
+        <circle class="map-dot" cx="528" cy="307" r="5"/><text class="map-label" x="488" y="294">张掖</text>
+        <circle class="map-dot" cx="271" cy="165" r="5"/><text class="map-label" x="282" y="157">乌鲁木齐</text>
+        <circle class="map-dot" cx="268" cy="27" r="5"/><text class="map-label" x="278" y="24">禾木·喀纳斯</text>
+        <circle class="map-dot" cx="217" cy="150" r="5"/><text class="map-label" x="159" y="140">独山子</text>
+        <circle class="map-dot" cx="179" cy="226" r="5"/><text class="map-label" x="137" y="248">库车</text>
+        <circle class="map-dot" cx="39" cy="291" r="5"/><text class="map-label" x="48" y="286">喀什</text>
+        <circle class="map-dot" cx="24" cy="340" r="5"/><text class="map-label" x="34" y="360">塔县</text>
+        <circle class="map-dot" cx="118" cy="359" r="5"/><text class="map-label" x="128" y="381">和田</text>
+        <circle class="map-dot" cx="434" cy="190" r="5"/><text class="map-label" x="445" y="182">吐鲁番</text>
+        <circle class="map-dot" cx="544" cy="272" r="5"/><text class="map-label" x="505" y="259">敦煌</text>
+        <circle class="map-dot" cx="617" cy="283" r="5"/><text class="map-label" x="627" y="276">嘉峪关</text>
+        <circle class="map-dot" cx="669" cy="348" r="5"/><text class="map-label" x="620" y="337">中卫</text>
+        <circle class="map-dot" cx="687" cy="256" r="5"/><text class="map-label" x="627" y="248">包头</text>
+        <circle class="map-dot" cx="674" cy="403" r="5"/><text class="map-label" x="622" y="396">延安</text>
+        <circle class="map-dot" cx="639" cy="488" r="5"/><text class="map-label" x="600" y="481">西安</text>
+      </g>
+      <text class="map-small" x="20" y="602">西</text><text class="map-small" x="686" y="602">东</text>
+    </svg>
+    <div class="map-legend"><span style="--c:#c89042">快速西进</span><span style="--c:#6f9e91">北疆秋色</span><span style="--c:#df8c62">独库公路</span><span style="--c:#8ba7be">南疆与沙漠</span><span style="--c:#b78a60">东疆河西</span><span style="--c:#a57aaa">宁蒙陕返渝</span></div>
+    <div class="map-note">依据73天真实行程节点，经高德地理编码校准后绘制。路线用于呈现全程结构，不是车辆GPS轨迹；独库等季节性道路不采用当前导航绕行距离反推历史里程。</div>
+  </section>
+
   <section>
     <div class="kicker">The Journey</div>
     <h2 class="section-title">我们把秋天，走成了一条路</h2>
@@ -52,7 +88,6 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
       <div class="route">重庆 → 陇南 → 兰州 → 永登 → 张掖 → 哈密 → 巴里坤 → 乌鲁木齐</div>
       <p class="story">出发第一天就开到深夜。我们一路做饭、补能、保养车辆，经河西走廊向西。进疆后没有照原计划直奔吐鲁番，而是临时翻过东天山去了巴里坤。真正的长途旅行，从接受变化开始。</p>
       <p class="moment">“计划给方向，日子自己决定速度。”</p>
-      <a class="map-link" href="https://uri.amap.com/search?keyword=%E5%B7%B4%E9%87%8C%E5%9D%A4&callnative=1" rel="noopener">在高德看巴里坤</a>
     </article>
 
     <article class="chapter">
@@ -60,7 +95,6 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
       <div class="route">五彩湾 → 可可托海 → 阿禾公路 → 禾木 → 喀纳斯 → 布尔津 → 五彩滩 → 乌尔禾 → 独山子</div>
       <p class="story">额尔齐斯河谷已经入秋，阿禾公路把我们带进禾木。到了喀纳斯，我们放弃观鱼台和白哈巴，把体力留给孩子，也留给三湾的第二次徒步。少看两个“必打卡”，并没有让旅程少一点。</p>
       <p class="moment">“我们不是赶到风景里，而是一起走进风景里。”</p>
-      <a class="map-link" href="https://uri.amap.com/search?keyword=%E7%A6%BE%E6%9C%A8%E9%A3%8E%E6%99%AF%E5%8C%BA&callnative=1" rel="noopener">在高德看禾木</a>
     </article>
 
     <article class="chapter">
@@ -68,7 +102,6 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
       <div class="route">独山子 → 乔尔玛 → 那拉提 → 巴音布鲁克 → 铁力买提达坂 → 库车</div>
       <p class="story">雪、冰雹、大雾和临时管制轮番出现。我们跟着现场路况一点点向前，在巴音布鲁克看九曲十八弯，第二天翻过铁力买提达坂，从北疆走进南疆。三天不长，却像穿过了几个季节。</p>
       <p class="moment">“有些路的意义，就在它随时可能关闭。”</p>
-      <a class="map-link" href="https://uri.amap.com/search?keyword=%E7%8B%AC%E5%BA%93%E5%85%AC%E8%B7%AF&callnative=1" rel="noopener">在高德看独库公路</a>
     </article>
   </section>
 
@@ -80,7 +113,6 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
       <div class="route">库车 → 温宿 → 喀什 → 塔县 → 莎车 → 泽普 → 叶城 → 和田 → 民丰 → 塔中 → 轮台 → 库尔勒</div>
       <p class="story">我们在喀什看古城，也沿中巴友谊路上到帕米尔；在莎车听十二木卡姆，在和田连续住了三天。后来穿越塔克拉玛干沙漠公路，长路、日照、饮水和电量都必须提前安排。南疆最难忘的，不只是辽阔，还有生活本身。</p>
       <p class="moment">“停下来，才看见一个地方真正的样子。”</p>
-      <a class="map-link" href="https://uri.amap.com/search?keyword=%E5%92%8C%E7%94%B0%E5%B8%82&callnative=1" rel="noopener">在高德看和田</a>
     </article>
 
     <article class="chapter">
@@ -88,7 +120,6 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
       <div class="route">吐鲁番 → 鄯善 → 哈密 → 敦煌 → 玉门关 → 瓜州 → 嘉峪关 → 肃南 → 张掖 → 武威 → 中卫</div>
       <p class="story">火焰山、库木塔格沙漠、莫高窟、玉门关、嘉峪关……课本里的名字开始一一出现在车窗外。施工和过境管控让旧路线几次作废，我们就按真实可走的路继续。历史并不只在景区里，也在沿途每一段地名里。</p>
       <p class="moment">“从敦煌出来以后，风里仿佛都有时间。”</p>
-      <a class="map-link" href="https://uri.amap.com/search?keyword=%E8%8E%AB%E9%AB%98%E7%AA%9F&callnative=1" rel="noopener">在高德看莫高窟</a>
     </article>
 
     <article class="chapter">
@@ -96,7 +127,6 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
       <div class="route">沙坡头 → 银川 → 包头 → 库布齐 → 鄂尔多斯 → 延安 → 黄帝陵 → 西安 → 秦岭 → 宁陕 → 重庆</div>
       <p class="story">在包头停了六天，把身体和生活都重新收拾好。之后沿内蒙古、陕北一路南下，走过延安、黄帝陵和西安，再翻越秦岭。11月23日22:26，我们回到重庆。进门后做了一顿晚饭，73天就这样落回日常。</p>
       <p class="moment">“原来旅程的终点，不是最后一个景点，而是家里的那顿饭。”</p>
-      <a class="map-link" href="https://uri.amap.com/search?keyword=%E7%A7%A6%E5%B2%AD%E5%88%86%E6%B0%B4%E5%B2%AD&callnative=1" rel="noopener">在高德看秦岭分水岭</a>
     </article>
   </section>
 
@@ -129,7 +159,7 @@ details{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);paddi
     <h2>我们带孩子看世界，世界也重新教我们生活。</h2>
     <p>73天里，有雪山、沙漠和胡杨，也有补能、做饭、洗衣和临时改道。宏大的风景最后都变成了很小的事情：一家人在一起，知道什么时候继续，什么时候停下，什么时候回家。</p>
     <div class="signature">西北新疆家庭自驾 · 2026</div>
-    <p class="source">行程依据：每日行程总表、逐日实录、当前行程快照与旅行账单锁定版。地点入口使用高德地图官方搜索链接；未核实的总里程未写入。</p>
+    <p class="source">行程依据：每日行程总表、逐日实录、当前行程快照与旅行账单锁定版。全程路线节点使用高德地理编码校准；未核实的实际总里程未写入。</p>
   </section>
 </main>
 </div>
