@@ -42,8 +42,11 @@ main{padding:44px 20px 0}.intro{font-family:Georgia,"Songti SC",serif;font-size:
 .js picture.is-loading img{opacity:0}
 .js picture img{transition:opacity .45s ease}
 .js picture.is-ready img{opacity:1}
+.js picture.is-loading::before{content:"";position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;border:2px solid rgba(23,32,31,.16);border-top-color:rgba(23,32,31,.6);animation:ph-spin .8s linear infinite;z-index:1}
+.cover picture.is-loading::before{border-color:rgba(255,255,255,.18);border-top-color:rgba(255,255,255,.75)}
+@keyframes ph-spin{to{transform:rotate(360deg)}}
 @keyframes ph-sweep{from{background-position:-120% 0}to{background-position:220% 0}}
-@media(prefers-reduced-motion:reduce){.js picture.is-loading::after{animation:none}}
+@media(prefers-reduced-motion:reduce){.js picture.is-loading::after,.js picture.is-loading::before{animation:none}}
 .nb{white-space:nowrap}.chapter-photos{display:grid;grid-template-columns:1fr;gap:10px;margin:24px 0 6px}.chapter-photos picture,.cover picture{display:block;margin:0}.chapter-photos img,.cover img{width:100%;height:auto;display:block}.chapter-photos figure{margin:0}.chapter-photos img{display:block;width:100%;height:auto;background:#e7dfd0}
 .interlude{margin:40px -20px;padding:54px 24px;color:white;background:linear-gradient(140deg,#6d452e,#b56e42)}.interlude p{font-family:Georgia,"Songti SC",serif;font-size:27px;line-height:1.55;margin:0}.interlude small{display:block;margin-top:18px;color:rgba(255,255,255,.75)}
 .ledger{margin:54px 0;background:#e9dfce;padding:25px 20px}.ledger-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.money b{display:block;font-family:Georgia,serif;font-size:25px;font-weight:500}.money span{font-size:12px;color:var(--muted)}.ledger-note{font-size:13px;color:var(--muted);border-top:1px solid rgba(23,32,31,.16);padding-top:16px;margin-top:20px}
