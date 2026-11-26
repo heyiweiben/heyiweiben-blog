@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Noto Sans SC Variable";
+  src: url("/fonts/noto-sans-sc-var.woff2") format("woff2-variations");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif SC Variable";
+  src: url("/fonts/noto-serif-sc-var.woff2") format("woff2-variations");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --paper: #f3f0e8;
   --paper-deep: #e8e5da;
@@ -8,8 +23,8 @@
   --coral: #de765f;
   --focus: #8f3b2e;
   --line: color-mix(in srgb, var(--ink) 18%, transparent);
-  --sans: "Noto Sans SC Variable", "Noto Sans SC", sans-serif;
-  --serif: "Noto Serif SC Variable", "Noto Serif SC", serif;
+  --sans: "Noto Sans SC Variable", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --serif: "Noto Serif SC Variable", "Noto Serif SC", "Songti SC", "SimSun", serif;
   --ease-out: cubic-bezier(.16, 1, .3, 1);
   --page-gutter: clamp(1.5rem, 5vw, 6.5rem);
   color-scheme: light;

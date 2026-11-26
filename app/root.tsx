@@ -1,5 +1,3 @@
-import "@fontsource-variable/noto-sans-sc";
-import "@fontsource-variable/noto-serif-sc";
 import "./styles/global.css";
 
 import { useEffect, useRef, useState } from "react";
@@ -18,6 +16,20 @@ import type { Route } from "./+types/root";
 const SITE_URL = "https://heyiweiben.com";
 
 export const links: Route.LinksFunction = () => [
+  {
+    rel: "preload",
+    href: "/fonts/noto-serif-sc-var.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "preload",
+    href: "/fonts/noto-sans-sc-var.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
   { rel: "icon", href: "/images/brand/heyiweiben-icon-32.png", type: "image/png", sizes: "32x32" },
   { rel: "icon", href: "/images/brand/heyiweiben-icon-16.png", type: "image/png", sizes: "16x16" },
   { rel: "apple-touch-icon", href: "/images/brand/heyiweiben-icon-180.png", sizes: "180x180" },

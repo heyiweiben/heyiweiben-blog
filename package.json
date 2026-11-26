@@ -16,10 +16,9 @@
     "test": "npm run content && node scripts/test-content.mjs"
   },
   "dependencies": {
-    "@fontsource-variable/noto-sans-sc": "^5.2.8",
-    "@fontsource-variable/noto-serif-sc": "^5.2.8",
     "@react-router/node": "^7.7.1",
     "gray-matter": "^4.0.3",
+    "isbot": "^5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.7.1",
@@ -29,8 +28,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "sharp": "^0.35.0",
-    "unified": "^11.0.5",
-    "isbot": "^5"
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@react-router/dev": "^7.7.1",
