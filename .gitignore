@@ -5,3 +5,4 @@ build/
 app/generated/
 static/images/landscape/web/
 _tmp_*
+.fontcache/
