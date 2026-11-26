@@ -18,7 +18,7 @@ const SITE_URL = "https://heyiweiben.com";
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/images/brand/heyiweiben-icon-32.png", type: "image/png", sizes: "32x32" },
   { rel: "icon", href: "/images/brand/heyiweiben-icon-16.png", type: "image/png", sizes: "16x16" },
-  { rel: "apple-touch-icon", href: "/images/brand/heyiweiben-icon-180.png", sizes: "180x180" },
+  { rel: "apple-touch-icon", href: "/images/brand/heyiweiben-icon-180-v2.png", sizes: "180x180" },
   { rel: "manifest", href: "/site.webmanifest" },
   { rel: "alternate", href: "/index.xml", type: "application/rss+xml", title: "何以为本" },
 ];
